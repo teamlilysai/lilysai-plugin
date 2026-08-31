@@ -1,12 +1,12 @@
 ---
-name: lilys-summarize
-description: Use when the user wants a Lilys note made from something — a YouTube video, a web article or podcast page, or a local file (pdf, docx, pptx, xlsx, mp4, mov, webm, mp3, m4a, wav). Triggers on "summarize this with Lilys", "save this video to Lilys", "make a note from this PDF", "put this in my Lilys library". Covers registering sources, uploading files, generating the note, and waiting for it to finish.
+name: lilysai-summarize
+description: Use when the user wants a LilysAI note made from something — a YouTube video, a web article or podcast page, or a local file (pdf, docx, pptx, xlsx, mp4, mov, webm, mp3, m4a, wav). Triggers on "summarize this with Lilys", "save this video to LilysAI", "make a note from this PDF", "put this in my Lilys library". Covers registering sources, uploading files, generating the note, and waiting for it to finish.
 license: MIT
 ---
 
-# Summarize a source with Lilys
+# Summarize a source with LilysAI
 
-Lilys stores work in three layers: a **project** bundles the **sources** you register,
+LilysAI stores work in three layers: a **project** bundles the **sources** you register,
 and **notes** are the report bodies generated from that project. Making a note is
 therefore three calls, in order, not one.
 
@@ -32,7 +32,7 @@ single project so one note can draw on all of them.
 ## 2. Register the sources
 
 `create_project(sources, name?)` returns the new project id and one source id per source.
-Give the project a `name` the user would recognise; skip it and Lilys names it after the
+Give the project a `name` the user would recognise; skip it and LilysAI names it after the
 first source.
 
 This does not produce a note. It starts the analysis that a note is later written from.

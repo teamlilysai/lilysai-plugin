@@ -1,14 +1,14 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
-  "name": "lilys",
+  "name": "lilysai",
   "version": "0.1.0",
-  "description": "Lilys skills plus the Lilys MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
+  "description": "LilysAI skills plus the LilysAI MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
   "author": {
-    "name": "Lilys AI",
+    "name": "LilysAI",
     "url": "https://lilys.ai"
   },
   "homepage": "https://lilys.ai",
-  "repository": "https://github.com/teamlilysai/lilys-plugin",
+  "repository": "https://github.com/teamlilysai/lilysai-plugin",
   "license": "MIT",
-  "keywords": ["lilys", "summarize", "notes", "youtube", "pdf", "research"]
+  "keywords": ["lilysai", "summarize", "notes", "youtube", "pdf", "research"]
 }

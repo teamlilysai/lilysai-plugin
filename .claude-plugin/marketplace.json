@@ -1,19 +1,19 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "lilys",
-  "description": "Official Lilys plugins for coding agents.",
+  "name": "lilysai",
+  "description": "Official LilysAI plugins for coding agents.",
   "owner": {
-    "name": "Lilys AI",
+    "name": "LilysAI",
     "url": "https://lilys.ai"
   },
   "plugins": [
     {
-      "name": "lilys",
+      "name": "lilysai",
       "source": "./",
-      "description": "Lilys skills plus the Lilys MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
+      "description": "LilysAI skills plus the LilysAI MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
       "version": "0.1.0",
       "license": "MIT",
-      "keywords": ["lilys", "summarize", "notes", "youtube", "pdf", "research"]
+      "keywords": ["lilysai", "summarize", "notes", "youtube", "pdf", "research"]
     }
   ]
 }

@@ -1,7 +1,7 @@
-# Lilys plugin
+# LilysAI plugin
 
-[Lilys](https://lilys.ai) turns YouTube videos, web articles, documents and audio into
-organised notes. This repository packages the Lilys MCP server together with the skills
+[LilysAI](https://lilys.ai) turns YouTube videos, web articles, documents and audio into
+organised notes. This repository packages the LilysAI MCP server together with the skills
 that teach an agent how to use it.
 
 The MCP server on its own gives an agent thirteen tools. The skills tell it which
@@ -13,26 +13,31 @@ Two skills ship here:
 
 | Skill | Fires when |
 |---|---|
-| `lilys-summarize` | The user wants a note made from a video, an article, or a file |
-| `lilys-library` | The user asks about — or wants to reorganise — what they already saved |
+| `lilysai-summarize` | The user wants a note made from a video, an article, or a file |
+| `lilysai-library` | The user asks about — or wants to reorganise — what they already saved |
 
 ## Install
 
 ### Claude Code
 
 ```
-/plugin marketplace add teamlilysai/lilys-plugin
-/plugin install lilys@lilys
+/plugin marketplace add teamlilysai/lilysai-plugin
+/plugin install lilysai@lilysai
 ```
 
-Then `/mcp` to sign in to Lilys.
+Then `/mcp` to sign in to LilysAI.
 
 ### Codex
 
 ```
-codex plugin marketplace add teamlilysai/lilys-plugin
-codex plugin add lilys@lilys
+codex plugin marketplace add teamlilysai/lilysai-plugin
+codex plugin add lilysai@lilysai
+codex mcp add lilysai --url https://mcp.lilys.ai/mcp
+codex mcp login lilysai
 ```
+
+Codex installs the skills from the plugin but does not read `.mcp.json`, so the server is
+added separately with the third command.
 
 ### Claude.ai, Claude Desktop, or any other MCP client
 
@@ -42,7 +47,7 @@ Add the server as a custom connector:
 https://mcp.lilys.ai/mcp
 ```
 
-Sign in with your Lilys account when prompted. The skills are separate — on plans that
+Sign in with your LilysAI account when prompted. The skills are separate — on plans that
 support uploading them, zip either directory under `skills/` and add it as a skill.
 
 ### Read-only

@@ -1,10 +1,10 @@
 ---
-name: lilys-library
-description: Use when the user asks about material they already saved in Lilys, rather than something new — "what did I save about X", "find that video I summarized last month", "what are my notes on Y", "pull up my highlights from that paper", or asks to rename, move, or tidy their Lilys projects and folders. Covers searching the library, reading notes and transcripts back, and reorganising projects into collections.
+name: lilysai-library
+description: Use when the user asks about material they already saved in LilysAI, rather than something new — "what did I save about X", "find that video I summarized last month", "what are my notes on Y in Lilys", "pull up my highlights from that paper", or asks to rename, move, or tidy their Lilys projects and folders. Covers searching the library, reading notes and transcripts back, and reorganising projects into collections.
 license: MIT
 ---
 
-# Work with the user's Lilys library
+# Work with the user's LilysAI library
 
 Everything the user has ever summarised lives here: **projects** (each a bundle of
 sources), the **notes** written from them, the **transcripts** extracted from the

@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "lilys": {
+    "lilysai": {
       "type": "http",
       "url": "https://mcp.lilys.ai/mcp"
     }
