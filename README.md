@@ -4,10 +4,12 @@
 organised notes. This repository packages the LilysAI MCP server together with the skill
 that teaches an agent how to use it.
 
-The MCP server on its own gives an agent thirteen tools. The skill tells it which
-sequence of those tools answers a real request — that summarising a source is
-`create_project` → `create_note` → poll `get_note`, three calls in that order, and that a
-slow note is waited on rather than asked for again.
+The MCP server on its own gives an agent thirteen tools, and it already carries the
+call sequence: the server's instructions state that summarising a source is
+`create_project` → `create_note` → poll `get_note`, three calls in that order, and each
+tool's description says when to reach for it. The skill covers what the server cannot —
+whether several sources belong in one project, and how to behave while a long note is
+being written.
 
 One skill ships here:
 
