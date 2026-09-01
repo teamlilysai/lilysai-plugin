@@ -1,20 +1,22 @@
 # LilysAI plugin
 
 [LilysAI](https://lilys.ai) turns YouTube videos, web articles, documents and audio into
-organised notes. This repository packages the LilysAI MCP server together with the skills
-that teach an agent how to use it.
+organised notes. This repository packages the LilysAI MCP server together with the skill
+that teaches an agent how to use it.
 
-The MCP server on its own gives an agent thirteen tools. The skills tell it which
+The MCP server on its own gives an agent thirteen tools. The skill tells it which
 sequence of those tools answers a real request — that summarising a source is
-`create_project` → `create_note` → poll, that a question about something the user saved
-last month starts at `list_projects`.
+`create_project` → `create_note` → poll `get_note`, three calls in that order, and that a
+slow note is waited on rather than asked for again.
 
-Two skills ship here:
+One skill ships here:
 
 | Skill | Fires when |
 |---|---|
 | `lilysai-summarize` | The user wants a note made from a video, an article, or a file |
-| `lilysai-library` | The user asks about — or wants to reorganise — what they already saved |
+
+Reading the library back — finding a project, pulling up a note or a transcript,
+reorganising folders — takes no skill: the tool descriptions carry it.
 
 ## Install
 
@@ -36,7 +38,7 @@ codex mcp add lilysai --url https://mcp.lilys.ai/mcp
 codex mcp login lilysai
 ```
 
-Codex installs the skills from the plugin but does not read `.mcp.json`, so the server is
+Codex installs the skill from the plugin but does not read `.mcp.json`, so the server is
 added separately with the third command.
 
 ### Claude.ai, Claude Desktop, or any other MCP client
@@ -47,8 +49,8 @@ Add the server as a custom connector:
 https://mcp.lilys.ai/mcp
 ```
 
-Sign in with your LilysAI account when prompted. The skills are separate — on plans that
-support uploading them, zip either directory under `skills/` and add it as a skill.
+Sign in with your LilysAI account when prompted. The skill is separate — on plans that
+support uploading them, zip `skills/lilysai-summarize` and add it as a skill.
 
 ### Read-only
 
