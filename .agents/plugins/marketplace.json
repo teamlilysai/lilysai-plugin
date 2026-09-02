@@ -1,0 +1,20 @@
+{
+  "name": "lilysai",
+  "interface": {
+    "displayName": "LilysAI"
+  },
+  "plugins": [
+    {
+      "name": "lilysai",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

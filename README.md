@@ -36,12 +36,8 @@ Then `/mcp` to sign in to LilysAI.
 ```
 codex plugin marketplace add teamlilysai/lilysai-plugin
 codex plugin add lilysai@lilysai
-codex mcp add lilysai --url https://mcp.lilys.ai/mcp
 codex mcp login lilysai
 ```
-
-Codex installs the skill from the plugin but does not read `.mcp.json`, so the server is
-added separately with the third command.
 
 ### Claude.ai, Claude Desktop, or any other MCP client
 

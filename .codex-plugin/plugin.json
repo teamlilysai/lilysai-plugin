@@ -1,0 +1,29 @@
+{
+  "name": "lilysai",
+  "version": "0.1.0",
+  "description": "LilysAI skills plus the LilysAI MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
+  "author": {
+    "name": "LilysAI",
+    "url": "https://lilys.ai"
+  },
+  "homepage": "https://lilys.ai",
+  "repository": "https://github.com/teamlilysai/lilysai-plugin",
+  "license": "MIT",
+  "keywords": ["lilysai", "summarize", "notes", "youtube", "pdf", "research"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "LilysAI",
+    "shortDescription": "Turn videos, articles and documents into organised notes",
+    "longDescription": "Register a YouTube video, web article, or local file with LilysAI, generate a note from it, and search the library you have already built.",
+    "developerName": "LilysAI",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://lilys.ai",
+    "defaultPrompt": [
+      "Summarize this YouTube video into a Lilys note",
+      "Make a note from this PDF in LilysAI",
+      "Find the notes I saved about transformers"
+    ]
+  }
+}
