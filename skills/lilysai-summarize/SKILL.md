@@ -1,9 +1,9 @@
 ---
 name: lilysai-summarize
-description: Turns a YouTube video, web article, podcast page, or local file (pdf, docx,
-  pptx, xlsx, mp4, mov, webm, mp3, m4a, wav) into a LilysAI note. Triggers on "summarize
-  this with Lilys", "save this video to LilysAI", "make a note from this PDF", "put this
-  in my Lilys library".
+description: Turns a YouTube video, web article, research paper, podcast page, or local
+  file (pdf, docx, pptx, xlsx, mp4, mov, webm, mp3, m4a, wav) into a LilysAI note.
+  Triggers on "summarize this video", "read these three papers and write it up", "make a
+  note from this PDF", "save this to my Lilys library" — whether or not LilysAI is named.
 license: MIT
 ---
 
