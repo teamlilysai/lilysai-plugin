@@ -32,6 +32,14 @@ codex plugin add lilysai@lilysai
 codex mcp login lilysai
 ```
 
+### If it stops working
+
+Re-authenticate from `/mcp` in Claude Code, or run:
+
+```
+claude mcp login plugin:lilysai:lilysai
+```
+
 ## Documentation
 
 **[docs.lilys.ai/mcp-server](https://docs.lilys.ai/mcp-server)** — connecting other
