@@ -1,0 +1,48 @@
+schema_version: "1.0"
+name: youtube-note
+description: >-
+  The plain entry point. Measures whether the skill's description fires at all,
+  and whether SKILL.md section 4 changes the shape of the answer.
+tags: [desc-axis, answer-shape]
+execution:
+  prompt: |
+    이 영상 요약해서 노트로 남겨줘 — https://www.youtube.com/watch?v=8kL2Vd9Pq3M
+  max_turns: 14
+  timeout_seconds: 420
+  allowed_tools: [Skill, mcp__plugin_lilysai_lilysai__create_project, mcp__plugin_lilysai_lilysai__create_note, mcp__plugin_lilysai_lilysai__get_note, mcp__plugin_lilysai_lilysai__get_project, mcp__plugin_lilysai_lilysai__list_projects, mcp__plugin_lilysai_lilysai__get_transcript]
+runs: 3
+graders:
+  - type: tool_used
+    name: skill-fires
+    tool: Skill
+    min: 1
+    weight: 1
+  - type: tool_used
+    name: one-project-only
+    tool: mcp__plugin_lilysai_lilysai__create_project
+    min: 1
+    max: 1
+    arm: both
+    weight: 1
+  - type: tool_order
+    name: register-before-note
+    before: mcp__plugin_lilysai_lilysai__create_project
+    after: mcp__plugin_lilysai_lilysai__create_note
+    arm: both
+    weight: 1
+  - type: tool_order
+    name: note-before-poll
+    before: mcp__plugin_lilysai_lilysai__create_note
+    after: mcp__plugin_lilysai_lilysai__get_note
+    arm: both
+    weight: 1
+  - type: llm
+    name: answer-leads-with-substance
+    focus: last_message
+    arm: both
+    weight: 2
+    criteria: |
+      The final answer leads with what the note actually says — its argument,
+      its concrete claims or numbers — and hands the user the note's URL.
+      It does NOT walk the user through the mechanics (registering a project,
+      creating a note, polling) as the main content of the reply.
