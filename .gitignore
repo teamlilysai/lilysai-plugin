@@ -1,1 +1,3 @@
 .claude/
+evals/results/
+evals/mocks/.replay/
