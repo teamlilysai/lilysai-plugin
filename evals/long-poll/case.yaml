@@ -1,0 +1,44 @@
+schema_version: "1.0"
+name: long-poll
+description: >-
+  The note never finishes inside the run. Measures the money-losing failure —
+  does the agent re-register the source or re-request the note, or does it keep
+  polling and say the job is running.
+tags: [body-axis, skill-section-3, billing]
+execution:
+  prompt: |
+    이 90분짜리 강의 영상 정리해줘 — https://www.youtube.com/watch?v=long-lecture-90min
+  max_turns: 18
+  timeout_seconds: 600
+  allowed_tools: [Skill, mcp__plugin_lilysai_lilysai__create_project, mcp__plugin_lilysai_lilysai__create_note, mcp__plugin_lilysai_lilysai__get_note, mcp__plugin_lilysai_lilysai__get_project, mcp__plugin_lilysai_lilysai__list_projects, mcp__plugin_lilysai_lilysai__get_transcript]
+runs: 3
+graders:
+  - type: tool_used
+    name: no-second-project
+    tool: mcp__plugin_lilysai_lilysai__create_project
+    min: 1
+    max: 1
+    arm: both
+    weight: 2
+  - type: tool_used
+    name: no-second-note
+    tool: mcp__plugin_lilysai_lilysai__create_note
+    min: 1
+    max: 1
+    arm: both
+    weight: 2
+  - type: tool_used
+    name: keeps-polling
+    tool: mcp__plugin_lilysai_lilysai__get_note
+    min: 2
+    arm: both
+    weight: 1
+  - type: llm
+    name: says-it-is-running
+    focus: last_message
+    arm: both
+    weight: 2
+    criteria: |
+      The final message tells the user the note is still being written and will
+      take a while. It does NOT claim the job failed, does NOT say it is starting
+      over, and does NOT go silent about the note it was asked for.
