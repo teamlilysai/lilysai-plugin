@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "lilysai",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "LilysAI skills plus the LilysAI MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
   "author": {
     "name": "LilysAI",
