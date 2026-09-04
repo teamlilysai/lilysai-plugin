@@ -4,33 +4,32 @@ description: Turns a YouTube video, web article, research paper, or local file (
   docx, pptx, ppt, hwp, hwpx, jpg, png, mp4, mov, webm, mp3, m4a, wav) into a LilysAI
   note. Triggers on
   "summarize this video", "read these three papers and write it up", "make a note from
-  this PDF", "save this to my Lilys library" — whether or not LilysAI is named.
+  this PDF", "save this to my Lilys library", whether or not LilysAI is named.
 license: MIT
 ---
 
 # Summarize with LilysAI
 
-## 1. Register the sources
+## 1. Register the source
 
 `create_project` starts the analysis that a note is later written from. It does not
 produce a note.
 
-One project holds several sources and a note can draw on them together, so register
-together what belongs together — three papers on one topic, a talk and its slides.
-Register separately what the user will go looking for separately.
+One project holds one source. Three papers on one topic mean three calls and three
+notes, so say that up front rather than promising a single write-up of all of them.
 
 Give it a `name` the user would recognise a month from now. Left out, LilysAI names the
-project after its first source.
+project after its source.
 
 ## 2. Ask for the note
 
-`create_note` returns a note id right away; the body is not written yet. Use
-`mode: "fast"` when the user wants something quick, and pass `sources` only to write
-from part of the project.
+`create_note` returns a note id right away; the body is not written yet. It takes the
+project and nothing else. If the project came from the web and holds more than one
+source, it will ask you to name the one you want in `sources`; `get_project` lists them.
 
 ## 3. Wait
 
-Poll `get_note` until the body arrives. A long video takes several minutes — say the job
+Poll `get_note` until the body arrives. A long video takes several minutes, so say the job
 is running rather than going quiet, and do not start it over.
 
 ## 4. Answer
