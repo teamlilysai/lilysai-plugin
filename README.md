@@ -5,9 +5,9 @@ organised notes. This repository packages the LilysAI MCP server together with t
 that teaches an agent how to use it.
 
 The MCP server on its own gives an agent thirteen tools, and it already carries the call
-sequence in its instructions and tool descriptions. The skill covers what those cannot —
-whether several sources belong in one project, and how to behave while a long note is
-being written.
+sequence in its instructions and tool descriptions. The skill covers what those cannot:
+how to name a project the user will recognise later, what to say when several links mean
+several projects, and how to behave while a long note is being written.
 
 | Skill | Fires when |
 |---|---|
@@ -34,9 +34,9 @@ codex mcp login lilysai
 
 ## Documentation
 
-**[docs.lilys.ai/mcp-server](https://docs.lilys.ai/mcp-server)** — connecting other
+**[docs.lilys.ai/mcp-server](https://docs.lilys.ai/mcp-server)** covers connecting other
 clients, the tool reference, what costs credits, the known limits, and troubleshooting.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
