@@ -11,7 +11,7 @@ several projects, and how to behave while a long note is being written.
 
 | Skill | Fires when |
 |---|---|
-| `lilysai-summarize` | The user wants a note made from a video, an article, or a file |
+| `summarize` | The user wants a note made from a video, an article, or a file |
 
 ## Install
 
