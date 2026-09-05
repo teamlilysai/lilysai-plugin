@@ -1,5 +1,5 @@
 ---
-name: lilysai-summarize
+name: summarize
 description: Turns a YouTube video, web article, research paper, or local file (pdf,
   docx, pptx, ppt, hwp, hwpx, jpg, png, mp4, mov, webm, mp3, m4a, wav) into a LilysAI
   note. Triggers on
