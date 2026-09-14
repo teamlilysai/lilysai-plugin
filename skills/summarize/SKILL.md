@@ -24,8 +24,9 @@ project after its source.
 ## 2. Ask for the note
 
 `create_note` returns a note id right away; the body is not written yet. It takes the
-project and nothing else. If the project came from the web and holds more than one
-source, it will ask you to name the one you want in `sources`; `get_project` lists them.
+project; `style` is optional and only for when the user asked for a shorter, longer or
+simpler note. If the project came from the web and holds more than one source, it will
+ask you to name the one you want in `sources`; `get_project` lists them.
 
 ## 3. Wait
 
