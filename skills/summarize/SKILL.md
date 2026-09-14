@@ -24,8 +24,15 @@ project after its source.
 ## 2. Ask for the note
 
 `create_note` returns a note id right away; the body is not written yet. It takes the
-project and nothing else. If the project came from the web and holds more than one
-source, it will ask you to name the one you want in `sources`; `get_project` lists them.
+project and, optionally, a `style`. If the project came from the web and holds more than
+one source, it will ask you to name the one you want in `sources`; `get_project` lists them.
+
+Pass `style` only when the user asked for it: `length` is `short`, `default` or `long`;
+`difficulty` is `default` or `easy` (plain words, everyday examples). "Give me the short
+version" is `{ length: "short" }`; "explain it simply" is `{ difficulty: "easy" }`. Each
+combination is its own note over the same source and costs nothing extra, but check
+`get_project` first — it shows every note's `length` and `difficulty`, so do not write
+one that is already there.
 
 ## 3. Wait
 
