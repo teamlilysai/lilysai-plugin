@@ -1,0 +1,43 @@
+schema_version: "1.0"
+name: library-lookup
+description: >-
+  Reading the library back needs no skill — the README says the tool descriptions
+  carry it. Measures over-firing: the summarize skill should stay out of the way,
+  and nothing should be created.
+tags: [desc-axis, over-firing]
+execution:
+  prompt: |
+    전에 라일리스에 저장해둔 논문 프로젝트가 뭐였더라? 목록 좀 보여줘.
+  max_turns: 10
+  timeout_seconds: 300
+  allowed_tools: [Skill, mcp__plugin_lilysai_lilysai__create_project, mcp__plugin_lilysai_lilysai__create_note, mcp__plugin_lilysai_lilysai__get_note, mcp__plugin_lilysai_lilysai__get_project, mcp__plugin_lilysai_lilysai__list_projects, mcp__plugin_lilysai_lilysai__get_transcript]
+runs: 3
+graders:
+  - type: tool_used
+    name: lists-the-library
+    tool: mcp__plugin_lilysai_lilysai__list_projects
+    min: 1
+    arm: both
+    weight: 2
+  - type: tool_used
+    name: creates-nothing
+    tool: mcp__plugin_lilysai_lilysai__create_project
+    min: 0
+    max: 0
+    arm: both
+    weight: 2
+  - type: tool_used
+    name: summarize-skill-stays-out
+    tool: Skill
+    min: 0
+    max: 0
+    arm: both
+    weight: 1
+  - type: llm
+    name: names-the-projects
+    focus: last_message
+    arm: both
+    weight: 1
+    criteria: |
+      The reply names the saved projects the account actually holds, so the user
+      can recognise the one they meant.

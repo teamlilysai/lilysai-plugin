@@ -1,0 +1,65 @@
+{
+  "tools": [
+    {
+      "name": "create_project",
+      "description": "Register sources (YouTube urls, web page urls, or upload ids) and start analysis. Charged per source. Does not produce a note.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sources": { "type": "array", "items": { "type": "string" }, "description": "Source urls or upload ids" },
+          "name": { "type": "string", "description": "Project name" },
+          "collection_id": { "type": "number" }
+        },
+        "required": ["sources"]
+      }
+    },
+    {
+      "name": "create_note",
+      "description": "Start writing a note from a project. Returns a note id immediately; the body is not written yet.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": { "type": "number" },
+          "mode": { "type": "string", "enum": ["fast", "full"] },
+          "sources": { "type": "array", "items": { "type": "number" } }
+        },
+        "required": ["project_id"]
+      }
+    },
+    {
+      "name": "get_note",
+      "description": "Read a note. While the body is still being written the note comes back with status generating.",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "note_id": { "type": "number" } },
+        "required": ["note_id"]
+      }
+    },
+    {
+      "name": "get_project",
+      "description": "Read a project and the sources in it.",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "project_id": { "type": "number" } },
+        "required": ["project_id"]
+      }
+    },
+    {
+      "name": "list_projects",
+      "description": "List the projects in the account, newest first.",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "query": { "type": "string" }, "cursor": { "type": "string" } }
+      }
+    },
+    {
+      "name": "get_transcript",
+      "description": "Read a source transcript. Also serves as a poll for source analysis.",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "source_id": { "type": "number" } },
+        "required": ["source_id"]
+      }
+    }
+  ]
+}
