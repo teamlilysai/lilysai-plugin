@@ -1,10 +1,10 @@
 {
   "name": "lilysai",
-  "version": "0.3.0",
-  "description": "LilysAI skills plus the LilysAI MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
+  "version": "0.4.0",
+  "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
   "author": {
     "name": "LilysAI",
-    "url": "https://lilys.ai"
+    "url": "https://readray.ai"
   },
   "homepage": "https://docs.lilys.ai/mcp-server",
   "repository": "https://github.com/teamlilysai/lilysai-plugin",
@@ -13,16 +13,16 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "LilysAI",
+    "displayName": "Readray",
     "shortDescription": "Turn videos, articles and documents into organised notes",
-    "longDescription": "Register a YouTube video, web article, or local file with LilysAI, generate a note from it, and search the library you have already built.",
+    "longDescription": "Register a YouTube video, web article, or local file with Readray, generate a note from it, and search the library you have already built.",
     "developerName": "LilysAI",
     "category": "Productivity",
     "capabilities": ["Read", "Write"],
-    "websiteURL": "https://lilys.ai",
+    "websiteURL": "https://readray.ai",
     "defaultPrompt": [
-      "Summarize this YouTube video into a Lilys note",
-      "Make a note from this PDF in LilysAI",
+      "Summarize this YouTube video into a Readray note",
+      "Make a note from this PDF in Readray",
       "Find the notes I saved about transformers"
     ]
   }

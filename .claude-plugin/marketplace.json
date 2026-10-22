@@ -1,17 +1,17 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "lilysai",
-  "description": "Official LilysAI plugins for coding agents.",
+  "description": "Official Readray plugins for coding agents.",
   "owner": {
     "name": "LilysAI",
-    "url": "https://lilys.ai"
+    "url": "https://readray.ai"
   },
   "plugins": [
     {
       "name": "lilysai",
       "source": "./",
-      "description": "LilysAI skills plus the LilysAI MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
-      "version": "0.4.0",
+      "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
+      "version": "0.5.0",
       "license": "MIT",
       "keywords": ["lilysai", "summarize", "notes", "youtube", "pdf", "research"]
     }

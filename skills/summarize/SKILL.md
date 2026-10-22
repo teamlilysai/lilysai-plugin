@@ -1,41 +1,55 @@
 ---
 name: summarize
 description: Turns a YouTube video, web article, research paper, or local file (pdf,
-  docx, pptx, ppt, hwp, hwpx, jpg, png, mp4, mov, webm, mp3, m4a, wav) into a LilysAI
+  docx, pptx, ppt, hwp, hwpx, jpg, png, mp4, mov, webm, mp3, m4a, wav) into a Readray
   note. Triggers on
   "summarize this video", "read these three papers and write it up", "make a note from
-  this PDF", "save this to my Lilys library", whether or not LilysAI is named.
+  this PDF", "save this to my Readray library", "save this to my Lilys library", whether or not Readray (formerly LilysAI) is named.
 license: MIT
 ---
 
-# Summarize with LilysAI
+# Summarize with Readray
 
-## 1. Register the source
+In Readray a **source** (`project` in the tools) holds up to 10 originals, each a link or a
+file, and the **notes** written from them.
 
-`create_project` starts the analysis that a note is later written from. It does not
-produce a note.
+## 1. Start the note
 
-One project holds one source. Three papers on one topic mean three calls and three
-notes, so say that up front rather than promising a single write-up of all of them.
+One `create_note` call saves the originals and starts the note. Pass
+`project: { sources: [...] }`: YouTube or web URLs as they are, local files as the ticket
+from `prepare_upload`. A URL that points straight at a file (`.pdf`, `.docx`, …) is
+rejected, so upload it instead.
 
-Give it a `name` the user would recognise a month from now. Left out, LilysAI names the
-project after its source.
+- Several links the user wants read together go in **one** call, as one source.
+- `note.report` picks the kind: `deep` (default) reads one original closely, `key` combines
+  every original into one note. Three papers to compare → `key`.
+- Give `project.name` something the user would recognise a month from now. Left out,
+  Readray names it after the first original. For an upload, pass the real filename.
+- Leave `model` out unless the user asked for a particular model.
 
-## 2. Ask for the note
+To write another note over a source that already exists, pass its number as `project`
+instead; nothing is registered or charged again.
 
-`create_note` returns a note id right away; the body is not written yet. It takes the
-project; `style` is optional and only for when the user asked for a shorter, longer or
-simpler note. If the project came from the web and holds more than one source, it will
-ask you to name the one you want in `sources`; `get_project` lists them.
+## 2. Wait
 
-## 3. Wait
+`create_note` answers at once with the project and note numbers; the body is not written
+yet. Poll `get_note` until it arrives. A long video takes several minutes, so say the job
+is running rather than going quiet.
 
-Poll `get_note` until the body arrives. A long video takes several minutes, so say the job
-is running rather than going quiet, and do not start it over.
+Never call `create_note` again with the same links to check on it. That registers them, and
+charges, a second time. If a call timed out, look for the source with `list_projects`
+first.
 
-## 4. Answer
+## 3. Answer
 
 Lead with what the note says: its argument, its numbers, the thing the user would have
 highlighted themselves. Keep the mechanics out of it unless something went wrong.
 
 Give them the note's `url`. If the body is long, give the substance and offer the rest.
+
+## When it is refused
+
+- `insufficient_credit`: not enough credits. Tell the user; they can top up, or retry with
+  `model: "free"`.
+- `upgrade_required`: their plan can't do this (a paid model, or a video over 3 hours on the
+  free plan). Tell the user rather than retrying.
