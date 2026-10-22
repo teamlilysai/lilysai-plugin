@@ -1,14 +1,14 @@
 ---
 name: summarize
 description: Turns a YouTube video, web article, research paper, or local file (pdf,
-  docx, pptx, ppt, hwp, hwpx, jpg, png, mp4, mov, webm, mp3, m4a, wav) into a LilysAI
+  docx, pptx, ppt, hwp, hwpx, jpg, png, mp4, mov, webm, mp3, m4a, wav) into a Readray
   note. Triggers on
   "summarize this video", "read these three papers and write it up", "make a note from
-  this PDF", "save this to my Lilys library", whether or not LilysAI is named.
+  this PDF", "save this to my Readray library", "save this to my Lilys library", whether or not Readray (formerly LilysAI) is named.
 license: MIT
 ---
 
-# Summarize with LilysAI
+# Summarize with Readray
 
 ## 1. Register the source
 
@@ -18,7 +18,7 @@ produce a note.
 One project holds one source. Three papers on one topic mean three calls and three
 notes, so say that up front rather than promising a single write-up of all of them.
 
-Give it a `name` the user would recognise a month from now. Left out, LilysAI names the
+Give it a `name` the user would recognise a month from now. Left out, Readray names the
 project after its source.
 
 ## 2. Ask for the note

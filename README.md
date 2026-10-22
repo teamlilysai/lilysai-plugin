@@ -1,7 +1,7 @@
-# LilysAI plugin
+# Readray plugin
 
-[LilysAI](https://lilys.ai) turns YouTube videos, web articles, documents and audio into
-organised notes. This repository packages the LilysAI MCP server together with the skill
+[Readray](https://readray.ai) (formerly LilysAI) turns YouTube videos, web articles, documents and audio into
+organised notes. This repository packages the Readray MCP server together with the skill
 that teaches an agent how to use it.
 
 The MCP server on its own gives an agent thirteen tools, and it already carries the call
@@ -22,7 +22,7 @@ several projects, and how to behave while a long note is being written.
 /plugin install lilysai@lilysai
 ```
 
-Then `/mcp` to sign in to LilysAI.
+Then `/mcp` to sign in to Readray.
 
 ### Codex
 
