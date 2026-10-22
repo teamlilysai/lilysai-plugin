@@ -1,7 +1,7 @@
 {
   "name": "lilysai",
   "version": "0.4.0",
-  "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into reports, and search the library you already built.",
+  "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
   "author": {
     "name": "LilysAI",
     "url": "https://readray.ai"
@@ -14,16 +14,16 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Readray",
-    "shortDescription": "Turn videos, articles and documents into organised reports",
-    "longDescription": "Register a YouTube video, web article, or local file with Readray, generate a report from it, and search the library you have already built.",
+    "shortDescription": "Turn videos, articles and documents into organised notes",
+    "longDescription": "Register a YouTube video, web article, or local file with Readray, generate a note from it, and search the library you have already built.",
     "developerName": "LilysAI",
     "category": "Productivity",
     "capabilities": ["Read", "Write"],
     "websiteURL": "https://readray.ai",
     "defaultPrompt": [
-      "Summarize this YouTube video into a Readray report",
-      "Make a report from this PDF in Readray",
-      "Find the reports I saved about transformers"
+      "Summarize this YouTube video into a Readray note",
+      "Make a note from this PDF in Readray",
+      "Find the notes I saved about transformers"
     ]
   }
 }

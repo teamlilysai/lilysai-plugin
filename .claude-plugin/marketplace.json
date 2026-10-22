@@ -10,7 +10,7 @@
     {
       "name": "lilysai",
       "source": "./",
-      "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into reports, and search the library you already built.",
+      "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
       "version": "0.5.0",
       "license": "MIT",
       "keywords": ["lilysai", "summarize", "notes", "youtube", "pdf", "research"]
