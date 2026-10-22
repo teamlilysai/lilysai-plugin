@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "lilysai",
   "version": "0.5.0",
-  "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
+  "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into reports, and search the library you already built.",
   "author": {
     "name": "LilysAI",
     "url": "https://readray.ai"

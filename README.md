@@ -1,17 +1,17 @@
 # Readray plugin
 
-[Readray](https://readray.ai) (formerly LilysAI) turns YouTube videos, web articles, documents and audio into
-organised notes. This repository packages the Readray MCP server together with the skill
-that teaches an agent how to use it.
+[Readray](https://readray.ai) (formerly LilysAI) turns YouTube videos, web articles, documents
+and audio into organised reports. This repository packages the Readray MCP server together
+with the skill that teaches an agent how to use it.
 
-The MCP server on its own gives an agent thirteen tools, and it already carries the call
+The MCP server on its own gives an agent nineteen tools, and it already carries the call
 sequence in its instructions and tool descriptions. The skill covers what those cannot:
-how to name a project the user will recognise later, what to say when several links mean
-several projects, and how to behave while a long note is being written.
+when several links belong in one source, how to name it so the user recognises it later,
+and how to behave while a long report is being written.
 
 | Skill | Fires when |
 |---|---|
-| `summarize` | The user wants a note made from a video, an article, or a file |
+| `summarize` | The user wants a report made from a video, an article, or a file |
 
 ## Install
 
