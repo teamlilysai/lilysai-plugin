@@ -15,20 +15,23 @@ file, and the **notes** written from them.
 
 ## 1. Start the note
 
-One `create_note` call saves the originals and starts the note. Pass
-`project: { sources: [...] }`: YouTube or web URLs as they are, local files as the ticket
-from `prepare_upload`. A URL that points straight at a file (`.pdf`, `.docx`, …) is
-rejected, so upload it instead.
+One `create_note` call saves the originals and starts the note. Pass them as `sources`:
+YouTube or web URLs as `{type: "url", url}`, local files as the ticket from `prepare_upload`.
+A URL that points straight at a file (`.pdf`, `.docx`, …) is rejected, so upload it instead.
 
 - Several links the user wants read together go in **one** call, as one source.
-- `note.report` picks the kind: `deep` (default) reads one original closely, `key` combines
+- `report` picks the kind: `deep` (default) reads one original closely, `key` combines
   every original into one note. Three papers to compare → `key`.
-- Give `project.name` something the user would recognise a month from now. Left out,
-  Readray names it after the first original. For an upload, pass the real filename.
+- `language` sets the language the note is written in. Leave it out to use the user's
+  Readray setting.
+- Readray names the source after its first original. If the user would not recognise that
+  name a month from now, rename it afterwards with `save_project`.
 - Leave `model` out unless the user asked for a particular model.
 
-To write another note over a source that already exists, pass its number as `project`
-instead; nothing is registered or charged again.
+To write another note over a source that already exists, pass its number as `project` and
+pick the original in `sources` as `{type: "existing_source", id}` (the number from
+`get_project`); nothing is registered or charged again. A new link given with `project` is
+added to that source first.
 
 ## 2. Wait
 
