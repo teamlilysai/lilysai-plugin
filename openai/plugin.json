@@ -52,11 +52,11 @@
               "description": "Find saved sources by topic",
               "prompt": "Which sources in my Readray library are about transformers?",
               "tools_triggered": "list_projects",
-              "expected_behavior": "Calls list_projects with a query such as \"transformer\" and lists the matching sources in the review account (including \"Attention Is All You Need\") with their links. Does not invent sources."
+              "expected_behavior": "Calls list_projects (for example with the query \"transformer\") and lists the matching sources in the review account, including the video \"Transformers, the tech behind LLMs | Deep Learning Chapter 5\", with their Readray links. Does not invent sources."
             },
             {
               "description": "Read a saved note",
-              "prompt": "Open my Readray note on the paper Attention Is All You Need and list its three main points.",
+              "prompt": "Open my Readray note on the video \"Transformers, the tech behind LLMs\" and list its three main points.",
               "tools_triggered": "list_projects, get_project, get_note",
               "expected_behavior": "Finds the source with list_projects, reads its note list with get_project, reads the note with get_note, and answers with three points taken from the note, citing it with its link."
             },
