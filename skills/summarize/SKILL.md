@@ -4,7 +4,7 @@ description: Turns a YouTube video, web article, research paper, or local file (
   docx, pptx, ppt, hwp, hwpx, jpg, png, mp4, mov, webm, mp3, m4a, wav) into a Readray
   note. Triggers on
   "summarize this video", "read these three papers and write it up", "make a note from
-  this PDF", "save this to my Readray library", "save this to my Lilys library", whether or not Readray (formerly LilysAI) is named.
+  this PDF", "save this to my Readray library", whether or not Readray is named.
 license: MIT
 ---
 
@@ -52,7 +52,7 @@ Give them the note's `url`. If the body is long, give the substance and offer th
 
 ## When it is refused
 
-- `insufficient_credit`: not enough credits. Tell the user; they can top up, or retry with
-  `model: "free"`.
+- `insufficient_credit`: the account does not have enough credits for this. Tell the user,
+  and offer to retry with `model: "free"`.
 - `upgrade_required`: their plan can't do this (a paid model, or a video over 3 hours on the
   free plan). Tell the user rather than retrying.
