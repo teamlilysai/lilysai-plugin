@@ -2,7 +2,7 @@
   "mcpServers": {
     "lilysai": {
       "type": "http",
-      "url": "https://mcp.lilys.ai/mcp"
+      "url": "https://mcp.readray.ai/mcp"
     }
   }
 }

@@ -34,7 +34,7 @@ codex mcp login lilysai
 
 ## Documentation
 
-**[docs.lilys.ai/mcp-server](https://docs.lilys.ai/mcp-server)** covers connecting other
+**[docs.readray.ai/mcp-server](https://docs.readray.ai/mcp-server)** covers connecting other
 clients, the tool reference, what costs credits, the known limits, and troubleshooting.
 
 ## License
