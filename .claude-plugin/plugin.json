@@ -1,14 +1,14 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "lilysai",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
   "author": {
     "name": "LilysAI",
     "url": "https://readray.ai"
   },
-  "homepage": "https://docs.lilys.ai/mcp-server",
+  "homepage": "https://docs.readray.ai/mcp-server",
   "repository": "https://github.com/teamlilysai/lilysai-plugin",
   "license": "MIT",
-  "keywords": ["lilysai", "summarize", "notes", "youtube", "pdf", "research"]
+  "keywords": ["readray", "lilysai", "summarize", "notes", "youtube", "pdf", "research"]
 }

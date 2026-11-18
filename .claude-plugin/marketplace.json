@@ -11,9 +11,9 @@
       "name": "lilysai",
       "source": "./",
       "description": "Readray skills plus the Readray MCP server: turn YouTube videos, web articles and documents into notes, and search the library you already built.",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "license": "MIT",
-      "keywords": ["lilysai", "summarize", "notes", "youtube", "pdf", "research"]
+      "keywords": ["readray", "lilysai", "summarize", "notes", "youtube", "pdf", "research"]
     }
   ]
 }
