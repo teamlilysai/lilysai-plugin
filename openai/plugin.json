@@ -1,0 +1,106 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "readray",
+  "version": "1.0.0",
+  "description": "Readray turns YouTube videos, web articles, documents and audio into organized notes, and lets you search and read the library you already built.",
+  "author": {
+    "name": "Readray",
+    "email": "support@lilys.ai",
+    "url": "https://readray.ai"
+  },
+  "homepage": "https://readray.ai",
+  "repository": "https://github.com/teamlilysai/lilysai-plugin",
+  "license": "MIT",
+  "keywords": [
+    "readray",
+    "notes",
+    "summarize",
+    "youtube",
+    "pdf",
+    "research"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Readray",
+        "shortDescription": "Turn videos & docs into notes",
+        "longDescription": "Readray turns YouTube videos, web articles, PDFs and audio into organized notes, and keeps them in a library you can search later.\n\nWith this plugin you can:\n- Make a Readray note from a YouTube video, a web page, or a file you upload\n- Find sources and notes you saved earlier, and read a note's full text\n- Read the transcript of a video or the text of a document you saved\n- Pull your highlights, memos and research cards into the conversation\n- Move sources between folders to keep the library tidy\n\nEvery note keeps its footnotes, so claims can be traced back to the original sentence, timestamp or page.\n\nRequires a Readray account. The plugin only accesses the library of the account you connect.",
+        "developerName": "Readray",
+        "category": "Productivity",
+        "capabilities": [
+          "Make notes",
+          "Search notes",
+          "Read notes",
+          "Organize folders"
+        ],
+        "websiteURL": "https://readray.ai",
+        "supportURL": "https://help.lilys.ai/en",
+        "privacyPolicyURL": "https://slashpage.com/lilys-terms/n5w9812gqyrzq24kpgze",
+        "termsOfServiceURL": "https://slashpage.com/lilys-terms/terms",
+        "defaultPrompt": [
+          "Make a Readray note from this YouTube video.",
+          "Find the notes I saved about transformers.",
+          "Summarize my latest Readray note in five bullets."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Make a note from a YouTube video",
+              "prompt": "Make a Readray note from this video and tell me its main points: https://www.youtube.com/watch?v=aircAruvnKk",
+              "tools_triggered": "create_note, get_note",
+              "expected_behavior": "Calls create_note once with the video URL, then polls get_note until the note is written (a few minutes). Answers with the note's main points and the note's Readray link."
+            },
+            {
+              "description": "Make a note from a web article",
+              "prompt": "Save this article to Readray as a note: https://en.wikipedia.org/wiki/OAuth",
+              "tools_triggered": "create_note, get_note",
+              "expected_behavior": "Calls create_note with the article URL, then get_note. Answers with a short summary of the note and its Readray link. The new source appears in the reviewer account."
+            },
+            {
+              "description": "Find saved sources by topic",
+              "prompt": "Which sources in my Readray library are about transformers?",
+              "tools_triggered": "list_projects",
+              "expected_behavior": "Calls list_projects (for example with the query \"transformer\") and lists the matching sources in the review account, including the video \"Transformers, the tech behind LLMs | Deep Learning Chapter 5\", with their Readray links. Does not invent sources."
+            },
+            {
+              "description": "Read a saved note",
+              "prompt": "Open my Readray note on the video \"Transformers, the tech behind LLMs\" and list its three main points.",
+              "tools_triggered": "list_projects, get_project, get_note",
+              "expected_behavior": "Finds the source with list_projects, reads its note list with get_project, reads the note with get_note, and answers with three points taken from the note, citing it with its link."
+            },
+            {
+              "description": "Check the account",
+              "prompt": "What Readray plan am I on and how many credits do I have left?",
+              "tools_triggered": "get_account",
+              "expected_behavior": "Calls get_account and reports the plan name and remaining credit balance of the review account. Does not suggest buying anything."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Deleting the Readray account is not supported",
+              "prompt": "Permanently delete my Readray account and all of its data."
+            },
+            {
+              "description": "Purchases are not supported",
+              "prompt": "Buy 1,000 more Readray credits for me."
+            },
+            {
+              "description": "Another person's library is not accessible",
+              "prompt": "Show me the Readray notes saved by john@example.com."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin does not sell anything or process payments. Making a note uses credits already included in the user's Readray plan."
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "First release: make Readray notes from videos, web pages and files, and search and read your Readray library from ChatGPT."
+      }
+    }
+  }
+}
