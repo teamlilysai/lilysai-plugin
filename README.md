@@ -4,7 +4,7 @@
 and audio into organised notes. This repository packages the Readray MCP server together
 with the skill that teaches an agent how to use it.
 
-The MCP server on its own gives an agent nineteen tools, and it already carries the call
+The MCP server on its own gives an agent twenty-five tools, and it already carries the call
 sequence in its instructions and tool descriptions. The skill covers what those cannot:
 when several links belong in one source, how to name it so the user recognises it later,
 and how to behave while a long note is being written.
